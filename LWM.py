@@ -41,7 +41,7 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS Venues (
 );
 """)
 cursor.execute("""CREATE TABLE IF NOT EXISTS EventTasks (
-    TasksID           INTEGER PRIMARY KEY
+    TasksID           INTEGER PRIMARY KEY ASC AUTOINCREMENT
                               REFERENCES Events ( EventID ),
     DeligateListSent  BOOLEAN,
     PaperWorkRecorded BOOLEAN,
