@@ -1,3 +1,5 @@
+#Made by Joshua Warburton the academic year of 2015-2016
+#Continued May 2017
 import tkinter as tk
 import tkinter.scrolledtext as tkst
 import tkinter.ttk as ttk
@@ -336,9 +338,9 @@ class Application(tk.Frame):
 
         # Colours
         topbarcolour = "white"
-        textboxcolour = "#CCFFCC"
-        regbgcolour = "#0099CC"
-        loginbgcolour = "gray5"
+        textboxcolour = "#00ACC1"
+        regbgcolour = "#0277BD"
+        loginbgcolour = "#424242"
 
         # Create Frames
         TopFrame = tk.Frame(self, bg=topbarcolour)
