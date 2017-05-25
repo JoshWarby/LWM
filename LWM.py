@@ -231,7 +231,7 @@ class Application(tk.Frame):
                     TrainerIDEntry_H.get())
                 cursor.execute(DML)
                 conn.commit()
-            
+
             DisplayData()
 
         # Function for updating tix box values within the database.
@@ -302,7 +302,7 @@ class Application(tk.Frame):
                 tableID = "TasksID"
                 DML = "DELETE FROM {} WHERE {} = {}".format(Table,tableID,ID)
                 cursor.execute(DML)
-                conn.commit()                
+                conn.commit()
             DisplayData()
         # "Forwards" pressing enter to checking password.
         def passcheckenter():
@@ -326,7 +326,8 @@ class Application(tk.Frame):
 
         # Checks password against encryped password.
         def passcheck(PE1):
-            if sha256_crypt.verify( PE1.get(), "$5$rounds=535000$A13jp7js0fJDN97x$fZ9gRkQoRKtreWl/WGa2Bc.eYXYf3aKcnydcll445fB"):
+            #if sha256_crypt.verify( PE1.get(), "$5$rounds=535000$A13jp7js0fJDN97x$fZ9gRkQoRKtreWl/WGa2Bc.eYXYf3aKcnydcll445fB"):
+            if sha256_crypt.verify( PE1.get(), "$5$rounds=535000$AXcB5Fs8zYN5taGo$hwzOItn575Ar4H18YKG0ITdS1fbe8EbWxMoNOFqAcl4"):
                 switchto(HomeFrame)
                 TopFrame.grid(row=0, column=0, sticky='news')
             else:
