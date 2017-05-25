@@ -153,6 +153,14 @@ class Application(tk.Frame):
         # Main function for inserting data into the database.
         def InsertData(whichlist):
 
+            #DML = "delete from sqlite_sequence where name='Events';"
+            #cursor.execute(DML)
+            #conn.commit()
+
+            #DML = "delete from sqlite_sequence where name='EventTasks';"
+            #cursor.execute(DML)
+            #conn.commit()
+
             for i in TrainerIDEntry_H.get() + VenueIDEntry_H.get():
                 if i  not in "0123456789":
                     PopupMessage("ID Wrong Format")
@@ -223,7 +231,7 @@ class Application(tk.Frame):
                     TrainerIDEntry_H.get())
                 cursor.execute(DML)
                 conn.commit()
-
+            
             DisplayData()
 
         # Function for updating tix box values within the database.
@@ -294,7 +302,7 @@ class Application(tk.Frame):
                 tableID = "TasksID"
                 DML = "DELETE FROM {} WHERE {} = {}".format(Table,tableID,ID)
                 cursor.execute(DML)
-                conn.commit()
+                conn.commit()                
             DisplayData()
         # "Forwards" pressing enter to checking password.
         def passcheckenter():
